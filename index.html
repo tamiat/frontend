@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+    <title>API Frontend</title>
+  </head>
+  <body>
+      <h1 id="title">Get Contents</h1>
+      <div id="container">
+        <div id="searchDiv">
+          <h2>Search</h2>
+          <input type="number" id="content-id" name="content-id" placeholder="Enter Content ID">
+          <input type="button" id="get-btn" onclick="fetchAPI()" value="Get">
+        </div>
+        <div id="resultDiv">
+          <h2>Result</h2>
+          <h3>ID: <span id="lbl-id"></span></h3>
+          <h3>Title: <span id="lbl-title"></span></h3>
+          <h3>Details: <span id="lbl-details"></span></h3>
+        </div>
+      </div>
+    <script src="script.js"></script>  
+  </body>
+</html>
