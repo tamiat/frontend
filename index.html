@@ -71,7 +71,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="#UpdateSection" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Update Content Type</p>
                 </a>
@@ -129,6 +129,32 @@
               </form>
             </div>
             <!-- /.card -->
+            <div id="UpdateSection" class="card card-warning">
+              <div class="card-header">
+                <h3 class="card-title">Update Content Type</h3>
+              </div>
+              <!-- /.card-header -->
+              <!-- form start -->
+              <form>
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="u_id">ID</label>
+                    <input type="text" class="form-control" id="u_id" placeholder="Enter ID">
+                  </div>
+                  <div class="form-group">
+                    <label for="u_name">Name</label>
+                    <input type="text" class="form-control" id="u_name" placeholder="Enter Name">
+                  </div>
+                </div>
+                <!-- /.card-body -->
+
+                <div class="card-footer">
+                  <button type="button" onclick="addCol()" class="btn btn-warning">Add Col Name</button>
+                  <button type="button" onclick="updateCol()" class="btn btn-warning">Update Col Name</button>
+                  <button type="button" onclick="deleteCol()" class="btn btn-warning">Delete Col Name</button>
+                </div>
+              </form>
+            </div>
             <!-- general form elements -->
             <div id="DeleteSection" class="card card-danger">
               <div class="card-header">
@@ -149,7 +175,6 @@
                 </div>
               </form>
             </div>
-            <!-- /.card -->
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -177,5 +202,6 @@
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+<script src="fun.js"></script>
 </body>
 </html>
