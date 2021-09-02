@@ -4,7 +4,7 @@ const deleteContentType = async () => {
     const response = await fetch(apiUrl,{
     	method:'DELETE',
     	headers:{
-    		 'Content-Type': 'application/json';
+    		 'Content-Type': 'application/json'
     	}
     });
     const data = await response.json(); //extract JSON from the http response
@@ -22,7 +22,7 @@ const createContentType = async () => {
     	method:'POST',
     	body:myBody,
     	headers:{
-    		'Content-Type': 'application/json';
+    		'Content-Type': 'application/json'
     	}
     });
     const data = await response.json(); //extract JSON from the http response
