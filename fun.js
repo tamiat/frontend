@@ -3,10 +3,7 @@ const deleteContentType = async () => {
     //this a apiurl for just test
     const apiUrl = host + "v1/contentType?id=" + document.getElementById("d_id").value;
     const response = await fetch(apiUrl,{
-    	method:'DELETE',
-    	headers:{
-    		 'Content-Type': 'application/json'
-    	}
+    	method:'DELETE'
     });
     const data = await response.json(); //extract JSON from the http response
   }
@@ -30,7 +27,8 @@ const createContentType = async () => {
   }
 const updateCol = async () => {
     //this a apiurl for just test
-    const apiUrl = host + "v1/contentType/renamecol?id=" + document.getElementById("u_id");
+    const id = document.getElementById("u_id").value;
+    const apiUrl = host + "v1/contentType/renamecol?id=" + id ;
     
     const name = document.getElementById("u_name").value;
     
@@ -46,7 +44,8 @@ const updateCol = async () => {
   }
 const addCol = async () => {
     //this a apiurl for just test
-    const apiUrl = host + "v1/contentType/addcol?id=" + document.getElementById("u_id");
+    const id = document.getElementById("u_id").value;
+    const apiUrl = host + "v1/contentType/addcol?id=" + id;
     
     const name = document.getElementById("u_name").value;
     
@@ -62,7 +61,8 @@ const addCol = async () => {
   }
 const deleteCol = async () => {
     //this a apiurl for just test
-    const apiUrl = host + "v1/contentType/delcol?id=" + document.getElementById("u_id");
+    const id = document.getElementById("u_id").value;
+    const apiUrl = host + "v1/contentType/delcol?id=" + id;
     
     const name = document.getElementById("u_name").value;
     
