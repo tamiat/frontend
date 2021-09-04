@@ -76,3 +76,49 @@ const deleteCol = async () => {
     });
     const data = await response.json(); //extract JSON from the http response
   }
+const signIn = async () => {
+    //this a apiurl for just test
+    const apiUrl = host + "v1/login";
+    
+    const email = document.getElementById("email").value;
+    const pass = document.getElementById("pass").value;
+    
+    let myBody="{\n\"email\" : \"" + email + "\",\n    \"password\": \"" + pass + "\"\n}";
+    const response = await fetch(apiUrl,{
+        method:'POST',
+        body:myBody,
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    });
+    const data = await response.json(); //extract JSON from the http response
+    if(data.token != undefined){
+        window.location.href="index.html";
+    }else{
+        document.getElementById("sign-alert").style.display = "block";
+    }
+  }
+
+const register = async () => {
+    //this a apiurl for just test
+    const apiUrl = host + "v1/signup";
+    
+    const email = document.getElementById("email").value;
+    const pass = document.getElementById("pass").value;
+    const re_pass = document.getElementById("re-pass").value;
+    if(pass == re_pass){
+        let myBody="{\n\"email\" : \"" + email + "\",\n    \"password\": \"" + pass + "\"\n}";
+        const response = await fetch(apiUrl,{
+            method:'POST',
+            body:myBody,
+            headers:{
+                'Content-Type': 'application/json'
+            }
+        });
+        const data = await response.json(); //extract JSON from the http response
+        window.location.href="login.html";
+        
+    }else{
+        document.getElementById("sign-alert").style.display = "block";
+    }
+  }
