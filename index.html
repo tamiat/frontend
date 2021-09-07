@@ -106,7 +106,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form onsubmit="createContentType()">
+              <form>
                 <div class="card-body">
                   <div class="form-group">
                     <label for="c_name">Name</label>
@@ -120,11 +120,11 @@
                     <label for="c_title">Title</label>
                     <input type="text" class="form-control" id="c_title" placeholder="Enter Title">
                   </div>
-                </div>
+                 </div>
                 <!-- /.card-body -->
-
+                 <div style="display:none;" class="alert alert-success" id="create-result"></div>
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">Create</button>
+                  <button onclick="createContentType()" type="button" class="btn btn-primary">Create</button>
                 </div>
               </form>
             </div>
@@ -140,6 +140,10 @@
                   <div class="form-group">
                     <label for="u_id">ID</label>
                     <input type="text" class="form-control" id="u_id" placeholder="Enter ID">
+                  </div>
+                  <div class="form-group">
+                    <label for="col-name">Col Name</label>
+                    <input type="text" class="form-control" id="col-name" placeholder="Enter Col Name">
                   </div>
                   <div class="form-group">
                     <label for="u_name">Name</label>
@@ -162,7 +166,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form onsubmit="deleteContentType()">
+              <form>
                 <div class="card-body">
                   <div class="form-group">
                     <label for="d_id">ID</label>
@@ -171,7 +175,7 @@
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-danger">Delete</button>
+                  <button onclick="deleteContentType()" type="button" class="btn btn-danger">Delete</button>
                 </div>
               </form>
             </div>
