@@ -24,6 +24,8 @@ const createContentType = async () => {
     	}
     });
     const data = await response.json(); //extract JSON from the http response
+    document.getElementById("create-result").innerText = "Inserted At ID: " + data.id;
+    document.getElementById("create-result").style.display = "block";
   }
 const updateCol = async () => {
     //this a apiurl for just test
@@ -31,8 +33,8 @@ const updateCol = async () => {
     const apiUrl = host + "v1/contentType/renamecol?id=" + id ;
     
     const name = document.getElementById("u_name").value;
-    
-    let myBody="{\n\"newcol\" : \"" + name + "\"\n}";
+    const col_name = document.getElementById("col-name").value;
+    let myBody="{\n\"" + col_name + "\" : \"" + name + "\"\n}";
     const response = await fetch(apiUrl,{
     	method:'PUT',
     	body:myBody,
@@ -48,8 +50,9 @@ const addCol = async () => {
     const apiUrl = host + "v1/contentType/addcol?id=" + id;
     
     const name = document.getElementById("u_name").value;
-    
-    let myBody="{\n\"newCol\" : \"" + name + "\"\n}";
+    const col_name = document.getElementById("col-name").value;
+
+    let myBody="{\n\"" + col_name + "\" : \"" + name + "\"\n}";
     const response = await fetch(apiUrl,{
     	method:'PUT',
     	body:myBody,
@@ -65,7 +68,7 @@ const deleteCol = async () => {
     const apiUrl = host + "v1/contentType/delcol?id=" + id;
     
     const name = document.getElementById("u_name").value;
-    
+    const col_name = document.getElementById("col-name").value;
     let myBody="{\n\"column name\" : \"" + name + "\"\n}";
     const response = await fetch(apiUrl,{
     	method:'PUT',
@@ -93,12 +96,14 @@ const signIn = async () => {
     });
     const data = await response.json(); //extract JSON from the http response
     if(data.token != undefined){
+        sessionStorage.setItem("login",1);
+        sessionStorage.setItem("user",email);
+        sessionStorage.setItem("userToken",data.token); 
         window.location.href="index.html";
     }else{
         document.getElementById("sign-alert").style.display = "block";
     }
   }
-
 const register = async () => {
     //this a apiurl for just test
     const apiUrl = host + "v1/signup";
@@ -122,3 +127,8 @@ const register = async () => {
         document.getElementById("sign-alert").style.display = "block";
     }
   }
+function chk() {
+   if(sessionStorage.getItem("login") != 1){
+        window.location.href = "login.html";
+   }
+}
