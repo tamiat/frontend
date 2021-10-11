@@ -128,7 +128,8 @@ const register = async () => {
     }
   }
 function chk() {
-   if(sessionStorage.getItem("login") != 1){
+    /*if(sessionStorage.getItem("login") != 1){
+        document.getElementById("lbl_user").innerText = sessionStorage.getItem("user");
         window.location.href = "login.html";
-   }
+   }*/
 }
